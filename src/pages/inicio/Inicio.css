@@ -1,0 +1,185 @@
+.inicio {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* DESTELLOS */
+.inicio::before,
+.inicio::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--color-green-glow), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.8;
+  animation: float 12s infinite alternate ease-in-out;
+}
+
+.inicio::before {
+  top: -150px;
+  left: -150px;
+}
+
+.inicio::after {
+  bottom: -150px;
+  right: -150px;
+  animation-delay: 4s;
+}
+
+/* CONTENIDO */
+.inicio-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 0 5%;
+}
+
+/*IMAGEN*/
+.inicio-imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inicio-imagen img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--color-green-primary);
+  box-shadow:
+    0 0 25px var(--color-green-glow),
+    0 0 60px rgba(29, 185, 84, 0.25);
+  transition: transform 0.4s ease;
+}
+
+.inicio-imagen img:hover {
+  transform: scale(1.05);
+}
+
+
+/* TEXTO */
+
+.inicio-texto{
+    min-width: 250px;
+    max-width: 800px;
+}
+
+.inicio-texto h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-white);
+}
+
+.inicio-texto span {
+  color: var(--color-green-primary);
+}
+
+.inicio-texto p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* BOTONES */
+/* CONTENEDOR */
+.inicio-botones {
+  display: flex;
+  gap: 1.2rem;
+}
+
+/* BOTÓN BASE */
+.btn {
+  position: relative;
+  padding: 0.85rem 1.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--color-white);
+  border: 1.8px solid var(--color-green-primary);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* EFECTO LUZ */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--color-green-glow),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn:hover {
+  color: var(--color-green-primary);
+  box-shadow: 0 0 15px var(--color-green-glow);
+  transform: translateY(-2px);
+}
+
+/* BOTÓN PRINCIPAL */
+.btn.primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-green-primary),
+    #0f3d26
+  );
+  color: var(--color-black);
+  border: none;
+  box-shadow: 0 0 30px var(--color-green-glow);
+}
+
+.btn.primary:hover {
+  color: var(--color-white);
+  box-shadow: 0 0 45px var(--color-green-glow);
+}
+
+
+/* VISUAL */
+.placeholder {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top, var(--color-green-primary), #000);
+  box-shadow: 0 0 40px var(--color-green-glow);
+}
+
+/* ANIMACIÓN */
+@keyframes float {
+  from {
+    transform: translateY(0px) translateX(0px);
+  }
+  to {
+    transform: translateY(40px) translateX(40px);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .inicio-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .inicio-botones {
+    justify-content: center;
+  }
+}

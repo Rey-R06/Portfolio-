@@ -1,0 +1,102 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(29, 185, 84, 0.2);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.navbar-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+.navbar-logo span {
+  color: var(--color-green-primary);
+}
+
+/* LINKS DESKTOP */
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  color: var(--color-white);
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--color-green-primary);
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--color-green-primary);
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--color-white);
+  transition: all 0.3s ease;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    top: 70px;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid var(--color-green-primary);
+    border-radius: 12px;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    display: none;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+}

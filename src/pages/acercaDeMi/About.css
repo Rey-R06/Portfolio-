@@ -1,0 +1,100 @@
+.about {
+  background: #000;
+  color: white;
+  padding: 5rem 2rem;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #00ff88;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.about-skills {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.about-skills span {
+  background: #111;
+  border: 1px solid #00ff88;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.about-skills span:hover {
+  background: #00ff88;
+  color: black;
+}
+
+.about-image img {
+  width: 280px;
+  border-radius: 20px;
+  border: 2px solid #00ff88;
+}
+
+.about-certificados {
+  margin-top: 3rem;
+}
+
+.about-certificados h3 {
+  color: #00ff88;
+  margin-bottom: 1.5rem;
+}
+
+.certificados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.certificado-card {
+  background: #111;
+  padding: 1.2rem;
+  border-radius: 15px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.certificado-card:hover {
+  border: 1px solid #00ff88;
+  transform: translateY(-5px);
+}
+
+.certificado-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.certificado-card p {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.certificado-card a {
+  color: #00ff88;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
