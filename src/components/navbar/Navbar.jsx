@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -8,6 +9,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="navbar-container">
 
+        {/* Logo */}
         <div className="navbar-logo">
           <span>&lt;/&gt;</span> Portfolio
         </div>
@@ -24,10 +26,21 @@ export default function Navbar() {
 
         {/* LINKS */}
         <nav className={`navbar-links ${open ? 'open' : ''}`}>
-          <a href="/" onClick={() => setOpen(false)}>Inicio</a>
-          <a href="/proyectos" onClick={() => setOpen(false)}>Proyectos</a>
-          <a href="/acerca-de-mi" onClick={() => setOpen(false)}>Sobre mí</a>
-          <a href="/contact" onClick={() => setOpen(false)}>Contacto</a>
+          <Link to="/" onClick={() => setOpen(false)}>
+            Inicio
+          </Link>
+
+          <Link to="/projects" onClick={() => setOpen(false)}>
+            Proyectos
+          </Link>
+
+          <Link to="/about" onClick={() => setOpen(false)}>
+            Sobre mí
+          </Link>
+
+          <Link to="/contact" onClick={() => setOpen(false)}>
+            Contacto
+          </Link>
         </nav>
 
       </div>
