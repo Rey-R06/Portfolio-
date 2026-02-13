@@ -1,6 +1,39 @@
 import "./About.css";
 
 export default function About() {
+  const certificados = [
+    {
+      nombre: "Curso definitivo de html y css",
+      institucion: "Platzi en conjunto con Cesde",
+      fecha: "2024",
+      archivo: "/diplomas/diploma-html-css.pdf",
+    },
+    {
+      nombre: "Java Basico",
+      institucion: "Platzi en conjunto con Cesde",
+      fecha: "2024",
+      archivo: "/diplomas/diploma-java-basico.pdf",
+    },
+    {
+      nombre: "Java OOP",
+      institucion: "Platzi en conjunto con Cesde",
+      fecha: "2024",
+      archivo: "/diplomas/diploma-java-oop.pdf",
+    },
+    {
+      nombre: "Javascript",
+      institucion: "Platzi en conjunto con Cesde",
+      fecha: "2025",
+      archivo: "/diplomas/diploma-javascript.pdf",
+    },
+    {
+      nombre: "Mobile first",
+      institucion: "Platzi en conjunto con Cesde",
+      fecha: "2024",
+      archivo: "/diplomas/diploma-mobile-first.pdf",
+    },
+  ];
+
   return (
     <section className="about">
       <article className="about-container">
@@ -32,34 +65,22 @@ export default function About() {
           <img src="/img/perfil-test.avif" alt="Foto perfil" />
         </div>
       </article>
-      
+
       <article className="about-certificados">
         <h3>Certificaciones</h3>
 
         <div className="certificados-grid">
-          <div className="certificado-card">
-            <h4>Desarrollo Web con React</h4>
-            <p>Plataforma XYZ - 2025</p>
-            <a href="#" target="_blank" rel="noreferrer">
-              Ver certificado
-            </a>
-          </div>
+          {certificados.map((cert, index) => (
+            <div className="certificado-card" key={index}>
+              <h4>{cert.nombre}</h4>
+              <p>{cert.institucion}</p>
+              <small>{cert.fecha}</small>
 
-          <div className="certificado-card">
-            <h4>Java + Spring Boot</h4>
-            <p>Plataforma XYZ - 2025</p>
-            <a href="#" target="_blank" rel="noreferrer">
-              Ver certificado
-            </a>
-          </div>
-
-          <div className="certificado-card">
-            <h4>Fundamentos de Base de Datos</h4>
-            <p>Plataforma XYZ - 2024</p>
-            <a href="#" target="_blank" rel="noreferrer">
-              Ver certificado
-            </a>
-          </div>
+              <a href={cert.archivo} target="_blank" rel="noreferrer">
+                Ver certificado
+              </a>
+            </div>
+          ))}
         </div>
       </article>
     </section>

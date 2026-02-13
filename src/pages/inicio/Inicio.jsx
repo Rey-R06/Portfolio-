@@ -17,7 +17,7 @@ export default function Inicio() {
             </p>
 
             <div className="inicio-botones">
-              <a href="/proyectos" className="btn primary">
+              <a href="/projects" className="btn primary">
                 Ver proyectos
               </a>
               <a href="/contact" className="btn">
