@@ -20,8 +20,19 @@ export default function Contacto() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Aquí luego conectaremos backend
-    console.log(form);
+    const numero = "573505558208"; // <-- Cambia por tu número real
+
+    const mensaje = `
+Hola, soy ${form.nombre}
+Email: ${form.email}
+
+Mensaje:
+${form.mensaje}
+  `;
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
 
     setEnviado(true);
 
@@ -39,12 +50,10 @@ export default function Contacto() {
   return (
     <section className="contacto">
       <div className="contacto-container">
-
         <h2>Contacto</h2>
         <p>¿Te interesa trabajar conmigo? Escríbeme.</p>
 
         <form className="contacto-form" onSubmit={handleSubmit}>
-
           <div className="form-group">
             <label>Nombre</label>
             <input
@@ -86,13 +95,9 @@ export default function Contacto() {
           </button>
 
           {enviado && (
-            <p className="mensaje-exito">
-              ✅ Mensaje enviado correctamente
-            </p>
+            <p className="mensaje-exito">✅ Mensaje enviado correctamente</p>
           )}
-
         </form>
-
       </div>
     </section>
   );

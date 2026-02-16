@@ -41,14 +41,21 @@ export default function About() {
           <h2>Sobre mí</h2>
 
           <p>
-            Soy desarrollador frontend con experiencia en React y consumo de
-            APIs REST. Actualmente trabajo también con Java y Spring Boot para
-            desarrollar aplicaciones full stack.
+            Desarrollador frontend con formación técnica en Desarrollo de
+            Software y experiencia en construcción de aplicaciones modernas con
+            React y Spring Boot. Soy Técnico Laboral por Competencias como
+            Asistente en Desarrollo de Software (CESDE) y actualmente curso
+            Tecnología en Desarrollo de Software en el ITM. Desde temprana edad
+            he enfocado mi crecimiento en el desarrollo de soluciones digitales
+            reales, combinando frontend, backend y buenas prácticas de
+            arquitectura.
           </p>
 
           <p>
-            Me enfoco en crear interfaces modernas, limpias y escalables,
-            aplicando buenas prácticas y arquitectura organizada.
+            Me apasiona aprender, enfrentar retos tecnológicos y mejorar
+            constantemente mis habilidades técnicas. Busco seguir creciendo como
+            desarrollador full stack y especializarme en desarrollo de software
+            profesional.
           </p>
 
           <div className="about-skills">
@@ -63,6 +70,35 @@ export default function About() {
 
         <div className="about-image">
           <img src="/img/perfil-test.avif" alt="Foto perfil" />
+        </div>
+      </article>
+
+      <article className="about-education">
+        <h3>Formación Académica</h3>
+
+        <div className="education-horizontal">
+          <div className="education-card">
+            <div className="education-circle"></div>
+            <h4>Técnico Laboral en Desarrollo de Software</h4>
+            <p>CESDE – Medellín</p>
+            <small>2025 · 694 horas certificadas</small>
+
+            <a
+              href="/diplomas/título-de-técnico.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="education-link"
+            >
+              Ver título
+            </a>
+          </div>
+
+          <div className="education-card">
+            <div className="education-circle"></div>
+            <h4>Tecnología en Desarrollo de Software (En curso)</h4>
+            <p>ITM – Instituto Tecnológico Metropolitano</p>
+            <small>2026 – Actualidad</small>
+          </div>
         </div>
       </article>
 
