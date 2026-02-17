@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./contacto.css";
 
 export default function Contacto() {
@@ -9,6 +10,7 @@ export default function Contacto() {
   });
 
   const [enviado, setEnviado] = useState(false);
+  const [cargando, setCargando] = useState(false);
 
   const handleChange = (e) => {
     setForm({
@@ -18,34 +20,38 @@ export default function Contacto() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
+  setCargando(true);
 
-    const numero = "573505558208"; // <-- Cambia por tu número real
-
-    const mensaje = `
-Hola, soy ${form.nombre}
-Email: ${form.email}
-
-Mensaje:
-${form.mensaje}
-  `;
-
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-
-    window.open(url, "_blank");
-
-    setEnviado(true);
-
-    setForm({
-      nombre: "",
-      email: "",
-      mensaje: "",
+  emailjs
+    .send(
+      import.meta.env.VITE_EMAIL_SERVICE,
+      import.meta.env.VITE_EMAIL_TEMPLATE,
+      {
+        nombre: form.nombre,
+        email: form.email,
+        mensaje: form.mensaje,
+      },
+      import.meta.env.VITE_EMAIL_PUBLIC
+    )
+    .then(() => {
+      setEnviado(true);
+      setForm({
+        nombre: "",
+        email: "",
+        mensaje: "",
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("Hubo un error al enviar el mensaje.");
+    })
+    .finally(() => {
+      setCargando(false);
+      setTimeout(() => setEnviado(false), 3000);
     });
+};
 
-    setTimeout(() => {
-      setEnviado(false);
-    }, 3000);
-  };
 
   return (
     <section className="contacto">
@@ -90,12 +96,14 @@ ${form.mensaje}
             />
           </div>
 
-          <button type="submit" className="btn primary">
-            Enviar mensaje
+          <button type="submit" className="btn primary" disabled={cargando}>
+            {cargando ? "Enviando..." : "Enviar mensaje"}
           </button>
 
           {enviado && (
-            <p className="mensaje-exito">✅ Mensaje enviado correctamente</p>
+            <p className="mensaje-exito">
+              ✅ Mensaje enviado correctamente
+            </p>
           )}
         </form>
       </div>

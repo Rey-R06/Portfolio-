@@ -1,6 +1,6 @@
 .inicio {
   position: relative;
-  min-height: 100vh;
+  min-height: 92vh;
   background-color: var(--bg-primary);
   display: flex;
   align-items: center;

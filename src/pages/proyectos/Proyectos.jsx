@@ -15,14 +15,6 @@ export default function Proyectos() {
           github="https://github.com/Rey-R06/Joly-Guacamoly-React"
           demo="https://joly-guacamoly-react.vercel.app/"
         />
-
-        <ProyectoCard
-          titulo="CMS JolyGuacamoly"
-          descripcion="CMS para gestión de productos y clientes con panel administrador."
-          tecnologias="React · Tailwind · Spring Boot"
-          github="#"
-          demo="#"
-        />
       </div>
     </section>
   );
