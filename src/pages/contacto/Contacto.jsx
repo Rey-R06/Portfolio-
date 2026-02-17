@@ -1,6 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import "./contacto.css";
+import "./Contacto.css";
 
 export default function Contacto() {
   const [form, setForm] = useState({
