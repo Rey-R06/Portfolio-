@@ -28,7 +28,7 @@ export default function Inicio() {
 
           <div className="inicio-imagen">
             <div className="placeholder">
-              <img src="/img/perfil-test.avif" alt="foto" />
+              <img src="/img/perfil.png" alt="foto" />
             </div>
           </div>
         </div>

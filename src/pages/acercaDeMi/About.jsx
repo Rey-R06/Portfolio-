@@ -69,7 +69,7 @@ export default function About() {
         </div>
 
         <div className="about-image">
-          <img src="/img/perfil-test.avif" alt="Foto perfil" />
+          <img src="/img/perfil.png" alt="Foto perfil" />
         </div>
       </article>
 
